@@ -18,6 +18,11 @@ jobs:
         env:
           COMPACT_JAPANESE_DICTIONARY: ${{ github.workspace }}/data/dictionary.bin
       - run: python3 tools/verify.py
+      - run: python3 -m unittest discover -s tests -p 'test_*.py'
+      - run: |
+          python3 -m venv .reference
+          .reference/bin/pip install cutlet==0.4.0 fugashi==1.3.3 unidic-lite==1.0.8 jaconv==0.3.4 mojimoji==0.0.13
+          .reference/bin/python tools/verify.py --reference
       - uses: actions/upload-artifact@v4
         with:
           name: compact-japanese-${{ runner.os }}-${{ runner.arch }}

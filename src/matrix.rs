@@ -188,9 +188,15 @@ impl Cache {
             return Err(());
         }
         let score_key = (left as u32) << 13 | right as u32;
-        let score_index = (score_key.wrapping_mul(0x9e3779b9) >> 19) as usize;
-        if self.scores[score_index].key == score_key {
-            return Ok(self.scores[score_index].value);
+        let score_index = (score_key.wrapping_mul(0x9e3779b9) >> 21) as usize * 4;
+        // Four-way buckets avoid repeated tile expansion when common context
+        // pairs collide. Cache entries contain only IDs and numeric scores.
+        for way in 0..4 {
+            if self.scores[score_index + way].key == score_key {
+                let value = self.scores[score_index + way].value;
+                self.scores.swap(score_index, score_index + way);
+                return Ok(value);
+            }
         }
         let key = (row >> matrix.row_shift) * matrix.blocks_x + (column >> matrix.column_shift);
         let hash = (key as u64).wrapping_mul(0x9e3779b97f4a7c15);
@@ -203,6 +209,8 @@ impl Cache {
         let pixel = ((row & ((1 << matrix.row_shift) - 1)) << matrix.column_shift)
             + (column & ((1 << matrix.column_shift) - 1));
         let value = slot.values.get(pixel).copied().ok_or(())?;
+        self.scores
+            .copy_within(score_index..score_index + 3, score_index + 1);
         self.scores[score_index] = Score {
             key: score_key,
             value,

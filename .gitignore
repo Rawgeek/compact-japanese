@@ -1,4 +1,5 @@
 /target
+/.reference
 /data
 /dist
 /.cache
