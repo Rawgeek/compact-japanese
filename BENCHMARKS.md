@@ -1,5 +1,7 @@
 # Measurements
 
+The complete methodology, limitations, full latency distribution above and machine-readable evidence are in [REPORT.md](REPORT.md).
+
 The initial dictionary is **28,816,754 bytes**. On Apple Silicon, the dictionary, dynamic library, Python binding and license notices occupy **29,329,463 bytes** uncompressed.
 
 | Criterion | Original | compact-japanese |

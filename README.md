@@ -6,6 +6,8 @@ It is designed for short names, addresses and labels. A single immutable diction
 
 The dictionary occupies **28,816,754 bytes**. Every one of the original **756,264 dictionary candidates** and **35 unknown-word candidates** is retained. Compression preserves all connection scores exactly.
 
+Read the [complete technical report](REPORT.md) for correctness, size accounting, throughput, latency, startup, memory, limitations and reproduction. Raw measurements are in [benchmarks/results](benchmarks/results), with a [machine-readable summary](benchmarks/report.json).
+
 ## Quick start on Apple Silicon
 
 M1, M2 and later Macs use `aarch64-apple-darwin`. No Rosetta is needed.
@@ -92,7 +94,7 @@ Inputs are limited to 16 KiB and 262,144 lattice nodes. NUL bytes are rejected. 
 
 macOS and GNU/Linux on 64-bit ARM and x86 are supported by the source. Apple Silicon and Linux ARM are tested locally; GitHub Actions also verifies Linux x86 and macOS ARM. Windows support is not implemented.
 
-See [BENCHMARKS.md](BENCHMARKS.md) for measurements and reproduction commands. Size means uncompressed installed bytes, including the dictionary, library, binding and license notices.
+See [REPORT.md](REPORT.md) for the complete comparison, [BENCHMARKS.md](BENCHMARKS.md) for a concise table and [benchmarks/results](benchmarks/results) for raw measurements. Size means uncompressed installed bytes, including the dictionary, library, binding and license notices.
 
 ## Verification
 

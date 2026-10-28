@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "project": "compact-japanese",
+  "version": "0.1.0",
+  "measured_at": "2026-10-28",
+  "target": {
+    "romanization": "Modified Hepburn",
+    "reference": "Cutlet 0.4.0; use_foreign_spelling=false",
+    "tokenizer_reference": "MeCab 0.996",
+    "dictionary": "unidic-lite 1.0.8 / UniDic 2.1.2"
+  },
+  "integrity": {
+    "vocabulary_candidates": 756264,
+    "unknown_candidates": 35,
+    "core_before_bytes": 259493567,
+    "core_after_bytes": 28816754,
+    "core_reduction_percent": 88.89500254933102,
+    "dictionary_sha256": "ebb5bbe30325025108154435d56a0a81d4c710c73160823c3cc4c781345c4c4e",
+    "data_archive_bytes": 16521903,
+    "data_archive_sha256": "0656b9cf1ce7414eff8449511790310b05f0aef50ef597bb4a82841d618a9e6a"
+  },
+  "installed": {
+    "macos_arm64_bytes": 29329463,
+    "linux_arm64_bytes": 29400815,
+    "limit_bytes": 32000000,
+    "cargo_dependencies": 0,
+    "python_runtime_dependencies": 0,
+    "macos_arm64_library_bytes": 456000
+  },
+  "correctness": {
+    "public_word_and_generated_cases": 24096,
+    "public_word_and_generated_mismatches": 0,
+    "generated_mixed_script_cases_per_platform": 20000,
+    "shipping_field_migration_cases": 444,
+    "stress_output_digests_matched": true,
+    "public_ci": ["macos-arm64", "linux-x86_64"]
+  },
+  "throughput": {
+    "macos_arm64_t6": {"before_fields_per_second": 66653.64204148324, "after_fields_per_second": 176275.75168385444},
+    "linux_arm64_t1": {"before_fields_per_second": 72844.41979841513, "after_fields_per_second": 198280.4791673797},
+    "linux_arm64_t6": {"before_fields_per_second": 71718.86346662327, "after_fields_per_second": 199697.6798126099}
+  },
+  "cpu_microseconds_per_field": {
+    "macos_arm64_t6": {"before": 12.025326666666668, "after": 4.787013333333333},
+    "linux_arm64_t1": {"before": 13.72668912, "after": 5.041992479999999},
+    "linux_arm64_t6": {"before": 14.172692553333333, "after": 5.078668896666667}
+  },
+  "startup_median_ms": {
+    "macos_arm64": {"before": 24.006042, "after": 8.88},
+    "linux_arm64": {"before": 15.501125, "after": 18.924167}
+  },
+  "linux_arm64_memory_mib_t6": {
+    "before_warm_pss": 190.287109375,
+    "after_warm_pss": 41.53515625,
+    "before_after_distinct_pss": 251.912109375,
+    "after_after_distinct_pss": 41.59375,
+    "before_private_growth": 61.625,
+    "after_private_growth": 0.02734375,
+    "before_dictionary_mappings": 12,
+    "after_dictionary_mappings": 1
+  },
+  "raw_results_directory": "benchmarks/results"
+}

@@ -21,6 +21,7 @@ jobs:
         env:
           COMPACT_JAPANESE_DICTIONARY: ${{ github.workspace }}/data/dictionary.bin
       - run: python3 tools/verify.py
+      - run: python3 tools/verify_report.py
       - run: python3 -m unittest discover -s tests -p 'test_*.py'
       - run: |
           python3 -m venv .reference
