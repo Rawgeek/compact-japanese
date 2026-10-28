@@ -10,6 +10,7 @@ import time
 ROOT = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--engine', choices=['native', 'cutlet'], required=True)
+parser.add_argument('--startup-only', action='store_true')
 args = parser.parse_args()
 started = time.perf_counter_ns()
 if args.engine == 'native':
@@ -25,6 +26,9 @@ else:
 assert convert('山田太郎') == 'Yamada Tarou'
 startup_ms = (time.perf_counter_ns()-started)/1e6
 result = {'engine':args.engine, 'import_init_first_call_ms':startup_ms, 'latency_us':{}}
+if args.startup_only:
+    print(json.dumps(result))
+    sys.exit(0)
 for name, value in {
     'name':'山田太郎', 'address':'東京都渋谷区神南1-2-3',
     'kana':'エンゼルタワー3F', 'ascii':'Example Building 123',

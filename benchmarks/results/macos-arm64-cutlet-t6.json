@@ -1,0 +1,32 @@
+{
+  "engine": "cutlet",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "threads": 6,
+  "vocabulary_inputs": 4096,
+  "distinct_per_thread": 50000,
+  "before": {
+    "peak_rss_mib": 27.671875,
+    "rss_mib": 27.703125
+  },
+  "warm": {
+    "peak_rss_mib": 526.140625,
+    "rss_mib": 526.40625
+  },
+  "after_distinct": {
+    "peak_rss_mib": 579.875,
+    "rss_mib": 581.515625
+  },
+  "setup_seconds": 0.01820920799218584,
+  "seconds": 4.500879333994817,
+  "cpu_seconds": 3.6075980000000003,
+  "cpu_microseconds_per_call": 12.025326666666668,
+  "calls_per_second": 66653.64204148324,
+  "output_sha256": [
+    "2648feb1f64283010c84bba39f749c977980ec264e22192ebdf7c82857b38790",
+    "0784ba185ee0d18ed60c165f280771a7d3ed3074659563839b62819a15aa6ca6",
+    "0f5c6fe0682672d4179e9077d9f5db41009147d14a08566e5fc55d68c8a4c7c2",
+    "77c86cc5c2702d58efd8549419ab882f90d7fff5810cbaf0cbbee0771878bd28",
+    "61150fbf5ff7f8a9110d14d3d024da0b0fda788ed876e7986bb31b2cc2a4c15c",
+    "148e1bce60be77e03e1c17b9e1115bb9f5b19a3aeef87c947d88af0f97822561"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "engine": "native",
+  "platform": "Linux-7.0.14-linuxkit-aarch64-with-glibc2.41",
+  "threads": 1,
+  "vocabulary_inputs": 4096,
+  "distinct_per_thread": 50000,
+  "before": {
+    "peak_rss_mib": 54.78125,
+    "rss_mib": 19.63671875,
+    "pss_mib": 14.79296875,
+    "private_mib": 9.953125,
+    "dictionary_mappings": 1
+  },
+  "warm": {
+    "peak_rss_mib": 54.78125,
+    "rss_mib": 44.5390625,
+    "pss_mib": 39.6640625,
+    "private_mib": 34.79296875,
+    "dictionary_mappings": 1
+  },
+  "after_distinct": {
+    "peak_rss_mib": 54.78125,
+    "rss_mib": 44.62109375,
+    "pss_mib": 39.71484375,
+    "private_mib": 34.8125,
+    "dictionary_mappings": 1
+  },
+  "setup_seconds": 0.008632916997157736,
+  "seconds": 0.25216804099909496,
+  "cpu_seconds": 0.25209962399999997,
+  "cpu_microseconds_per_call": 5.041992479999999,
+  "calls_per_second": 198280.4791673797,
+  "output_sha256": [
+    "2648feb1f64283010c84bba39f749c977980ec264e22192ebdf7c82857b38790"
+  ]
+}

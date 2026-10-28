@@ -1,0 +1,36 @@
+{
+  "engine": "cutlet",
+  "platform": "Linux-7.0.14-linuxkit-aarch64-with-glibc2.41",
+  "threads": 1,
+  "vocabulary_inputs": 4096,
+  "distinct_per_thread": 50000,
+  "before": {
+    "peak_rss_mib": 54.78125,
+    "rss_mib": 22.87890625,
+    "pss_mib": 18.087890625,
+    "private_mib": 13.30078125,
+    "dictionary_mappings": 0
+  },
+  "warm": {
+    "peak_rss_mib": 185.96484375,
+    "rss_mib": 186.375,
+    "pss_mib": 181.490234375,
+    "private_mib": 176.609375,
+    "dictionary_mappings": 2
+  },
+  "after_distinct": {
+    "peak_rss_mib": 195.2578125,
+    "rss_mib": 195.578125,
+    "pss_mib": 190.693359375,
+    "private_mib": 185.8125,
+    "dictionary_mappings": 2
+  },
+  "setup_seconds": 0.007274375002452871,
+  "seconds": 0.6863943750031467,
+  "cpu_seconds": 0.686334456,
+  "cpu_microseconds_per_call": 13.72668912,
+  "calls_per_second": 72844.41979841513,
+  "output_sha256": [
+    "2648feb1f64283010c84bba39f749c977980ec264e22192ebdf7c82857b38790"
+  ]
+}
