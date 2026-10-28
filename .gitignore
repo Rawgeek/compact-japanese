@@ -1,0 +1,6 @@
+/target
+/data
+/dist
+/.cache
+__pycache__/
+*.pyc

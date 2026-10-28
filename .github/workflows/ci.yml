@@ -1,0 +1,26 @@
+name: Rust and dictionary verification
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  verify:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-14]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: rustup toolchain install 1.95.0 --profile minimal --component rustfmt --component clippy
+      - run: cargo fmt --check
+      - run: cargo clippy --all-targets --locked --offline -- -D warnings
+      - run: python3 tools/build_data.py
+      - run: cargo test --all-targets --locked --offline
+        env:
+          COMPACT_JAPANESE_DICTIONARY: ${{ github.workspace }}/data/dictionary.bin
+      - run: python3 tools/verify.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: compact-japanese-${{ runner.os }}-${{ runner.arch }}
+          path: |
+            data/
+            target/release/libcompact_japanese.*

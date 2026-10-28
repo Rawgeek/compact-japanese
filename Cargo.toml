@@ -1,0 +1,25 @@
+[package]
+name = "compact-japanese"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.95"
+description = "Japanese to Modified Hepburn, with a lossless compact dictionary and bounded memory"
+authors = ["Stas Pisockij"]
+license = "MIT AND BSD-3-Clause"
+repository = "https://github.com/Rawgeek/compact-japanese"
+readme = "README.md"
+keywords = ["japanese", "romaji", "hepburn", "tokenizer", "unidic"]
+categories = ["text-processing"]
+exclude = ["data", "dist", ".cache", "target"]
+
+[lib]
+crate-type = ["rlib", "cdylib"]
+
+[dependencies]
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+strip = "debuginfo"
+panic = "unwind"
